@@ -29,6 +29,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
+          name: local-${{ matrix.arch }}.tar.bz2
           path: |
             local-${{ matrix.arch }}.tar.bz2
 
