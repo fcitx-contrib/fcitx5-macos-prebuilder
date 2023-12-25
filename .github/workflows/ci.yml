@@ -1,0 +1,41 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  build:
+    runs-on: macos-13
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Install dependencies
+        run: |
+          brew install \
+            ninja
+
+      - name: Build all
+        run: ./all.sh
+
+      - name: Upload artifact
+        if: ${{ github.ref != 'refs/heads/master' }}
+        uses: actions/upload-artifact@v4
+        with:
+          path: |
+            local-x86_64.tar.bz2
+
+      - name: Release
+        if: ${{ github.ref == 'refs/heads/master' }}
+        uses: 'marvinpinto/action-automatic-releases@latest'
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          automatic_release_tag: latest
+          prerelease: true
+          title: "Nightly Build"
+          files: |
+            local-x86_64.tar.bz2
