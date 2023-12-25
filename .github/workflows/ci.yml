@@ -9,6 +9,10 @@ on:
 jobs:
   build:
     runs-on: macos-13
+    strategy:
+      matrix:
+        arch: [x86_64, arm64]
+
     steps:
       - uses: actions/checkout@v4
         with:
@@ -20,14 +24,23 @@ jobs:
             ninja
 
       - name: Build all
-        run: ./all.sh
+        run: ./all.sh ${{ matrix.arch }}
 
       - name: Upload artifact
-        if: ${{ github.ref != 'refs/heads/master' }}
         uses: actions/upload-artifact@v4
         with:
           path: |
-            local-x86_64.tar.bz2
+            local-${{ matrix.arch }}.tar.bz2
+
+  release:
+    needs: build
+    if: ${{ github.ref == 'refs/heads/master' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          merge-multiple: true
 
       - name: Release
         if: ${{ github.ref == 'refs/heads/master' }}
@@ -39,3 +52,4 @@ jobs:
           title: "Nightly Build"
           files: |
             local-x86_64.tar.bz2
+            local-arm64.tar.bz2
