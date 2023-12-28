@@ -38,8 +38,8 @@ jobs:
             extra-cmake-modules \
             ninja
           arm-brew-install \
-            boost \
-            zstd
+            zstd \
+            boost
 
       - name: Download and extract Fcitx5.app
         run: |
