@@ -7,9 +7,9 @@ ARGS=(
 )
 
 if [[ $ARCH != `uname -m` ]]; then
-  ARGS+=-DENABLE_DATA=OFF
+  ARGS+=(-DENABLE_DATA=OFF)
 fi
 
-f5m_configure "$ARGS"
+f5m_configure ${ARGS[@]}
 f5m_build
 f5m_install

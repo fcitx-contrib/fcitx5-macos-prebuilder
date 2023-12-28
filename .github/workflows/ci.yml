@@ -12,14 +12,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        arch: [arm64]
+        arch: [x86_64, arm64]
 
     steps:
       - uses: actions/checkout@v4
         with:
           submodules: recursive
 
-      - name: Install dependencies
+      - name: Install dependencies (x86)
+        if: ${{ matrix.arch == 'x86_64' }}
         run: |
           brew install \
             boost \
@@ -33,7 +34,11 @@ jobs:
       - name: Install dependencies (arm)
         if: ${{ matrix.arch == 'arm64' }}
         run: |
+          brew install \
+            extra-cmake-modules \
+            ninja
           arm-brew-install \
+            boost \
             zstd
 
       - name: Download and extract Fcitx5.app
