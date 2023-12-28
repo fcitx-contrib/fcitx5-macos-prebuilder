@@ -12,17 +12,17 @@ fi
 
 export DESTDIR=`pwd`/build
 
-cbr() {
+f5m_configure() {
   cmake -B build -G Ninja \
     -DCMAKE_INSTALL_PREFIX=$HOMEBREW_PREFIX \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_OSX_ARCHITECTURES=$ARCH "$@"
 }
 
-cb() {
+f5m_build() {
   cmake --build build
 }
 
-ci() {
+f5m_install() {
   cmake --install build
 }
