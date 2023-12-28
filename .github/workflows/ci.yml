@@ -10,6 +10,7 @@ jobs:
   build:
     runs-on: macos-13
     strategy:
+      fail-fast: false
       matrix:
         arch: [x86_64, arm64]
 
@@ -21,6 +22,7 @@ jobs:
       - name: Install dependencies
         run: |
           brew install \
+            extra-cmake-modules \
             ninja
 
       - name: Build all
