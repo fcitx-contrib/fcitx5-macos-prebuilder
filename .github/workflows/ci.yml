@@ -10,18 +10,42 @@ jobs:
   build:
     runs-on: macos-13
     strategy:
+      fail-fast: false
       matrix:
         arch: [x86_64, arm64]
 
     steps:
       - uses: actions/checkout@v4
         with:
-          submodules: true
+          submodules: recursive
 
-      - name: Install dependencies
+      - name: Install dependencies (x86)
+        if: ${{ matrix.arch == 'x86_64' }}
         run: |
           brew install \
+            boost \
+            extra-cmake-modules \
             ninja
+
+      - name: Setup arm homebrew
+        if: ${{ matrix.arch == 'arm64' }}
+        uses: fcitx-contrib/macos-cross@master
+
+      - name: Install dependencies (arm)
+        if: ${{ matrix.arch == 'arm64' }}
+        run: |
+          brew install \
+            extra-cmake-modules \
+            ninja
+          arm-brew-install \
+            zstd \
+            boost
+
+      - name: Download and extract Fcitx5.app
+        run: |
+          wget https://github.com/fcitx-contrib/fcitx5-macos/releases/download/latest/Fcitx5-${{ matrix.arch }}.dmg
+          hdiutil attach Fcitx5-${{ matrix.arch }}.dmg
+          sudo cp -r /Volumes/Fcitx5/{Fcitx5.app,"Input Methods"}
 
       - name: Build all
         run: ./all.sh ${{ matrix.arch }}
@@ -44,7 +68,6 @@ jobs:
           merge-multiple: true
 
       - name: Release
-        if: ${{ github.ref == 'refs/heads/master' }}
         uses: 'marvinpinto/action-automatic-releases@latest'
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
