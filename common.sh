@@ -1,3 +1,5 @@
+ROOT=`pwd`
+
 if [[ -z $1 ]]; then
   ARCH=`uname -m`
 else
@@ -9,8 +11,6 @@ if [[ $ARCH == x86_64 ]]; then
 else
   HOMEBREW_PREFIX=/opt/homebrew
 fi
-
-export DESTDIR=`pwd`/build
 
 f5m_configure() {
   PKG_CONFIG_PATH=$HOMEBREW_PREFIX/lib/pkgconfig cmake -B build -G Ninja \
@@ -25,5 +25,10 @@ f5m_build() {
 }
 
 f5m_install() {
-  cmake --install build
+  DESTDIR=$ROOT/build/$1 cmake --install build
+}
+
+f5m_make_tarball() {
+  cd $ROOT/build/$1$HOMEBREW_PREFIX
+  tar cjvf $ROOT/build/$1-$ARCH.tar.bz2 *
 }
