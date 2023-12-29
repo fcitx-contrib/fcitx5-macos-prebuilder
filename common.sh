@@ -29,6 +29,6 @@ f5m_install() {
 }
 
 f5m_make_tarball() {
-  cd $ROOT/build/$1/usr/local
+  cd $ROOT/build/$1$HOMEBREW_PREFIX
   tar cjvf $ROOT/build/$1-$ARCH.tar.bz2 *
 }
