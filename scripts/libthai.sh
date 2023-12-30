@@ -3,6 +3,7 @@ set -e
 cd libthai
 
 cp ../patches/libthai.cmake CMakeLists.txt
+cp ../patches/libthai.pc.in .
 f5m_configure
 f5m_build
 f5m_install libthai
