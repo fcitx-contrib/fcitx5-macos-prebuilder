@@ -4,3 +4,6 @@
 [submodule "libime"]
 	path = libime
 	url = https://github.com/fcitx/libime
+[submodule "libthai"]
+	path = libthai
+	url = https://github.com/tlwg/libthai
