@@ -25,12 +25,12 @@ jobs:
           brew install \
             boost \
             extra-cmake-modules \
-            ninja \
-            glog gflags yaml-cpp leveldb opencc lua
+            glog gflags yaml-cpp leveldb opencc lua \
+            ninja
 
       - name: Setup arm homebrew
         if: ${{ matrix.arch == 'arm64' }}
-        uses: fcitx-contrib/macos-cross@master
+        uses: fcitx-contrib/macos-cross@ignore-deps
 
       - name: Install dependencies (arm)
         if: ${{ matrix.arch == 'arm64' }}
@@ -40,8 +40,8 @@ jobs:
             ninja
           arm-brew-install \
             zstd \
-            boost \
-            glog gflags yaml-cpp leveldb opencc lua
+            glog gflags yaml-cpp leveldb opencc lua \
+            boost
 
       - name: Download and extract Fcitx5.app
         run: |
