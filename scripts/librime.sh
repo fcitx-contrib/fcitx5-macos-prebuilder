@@ -19,8 +19,8 @@ ARGS=(
     -DBUILD_TEST:BOOL=OFF
     -DBUILD_MERGED_PLUGINS:BOOL=ON
     -DENABLE_EXTERNAL_PLUGINS:BOOL=OFF
+    "-DCMAKE_PREFIX_PATH=$ROOT/build/marisa/$HOMEBREW_PREFIX"
 )
-export EXTRA_FIND_ROOT_PATH="$ROOT/build/marisa/"
 f5m_configure ${ARGS[@]}
 f5m_build
 f5m_install librime
