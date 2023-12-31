@@ -25,7 +25,8 @@ jobs:
           brew install \
             boost \
             extra-cmake-modules \
-            ninja
+            ninja \
+            glog gflags yaml-cpp leveldb opencc
 
       - name: Setup arm homebrew
         if: ${{ matrix.arch == 'arm64' }}
@@ -39,7 +40,8 @@ jobs:
             ninja
           arm-brew-install \
             zstd \
-            boost
+            boost \
+            glog gflags yaml-cpp leveldb opencc
 
       - name: Download and extract Fcitx5.app
         run: |
