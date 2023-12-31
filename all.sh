@@ -2,6 +2,7 @@ set -e
 
 all_packages=(
   marisa
+  opencc
   libime
   libthai
 )

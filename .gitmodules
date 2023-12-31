@@ -7,3 +7,6 @@
 [submodule "libthai"]
 	path = libthai
 	url = https://github.com/tlwg/libthai
+[submodule "opencc"]
+	path = opencc
+	url = git@github.com:BYVoid/OpenCC.git
