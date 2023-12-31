@@ -7,26 +7,12 @@ rime_plugins=(hchunhui/librime-lua lotem/librime-octagram)
 for plugin in ${rime_plugins[@]}; do
     bash install-plugins.sh $plugin
 done
-sed -i "" '/#if RIME_BUILD_SHARED_LIBS/,/#endif/c\
-#if RIME_BUILD_SHARED_LIBS\
-#define rime_declare_module_dependencies()\
-#else\
-extern void rime_require_module_core();\
-extern void rime_require_module_dict();\
-extern void rime_require_module_gears();\
-extern void rime_require_module_levers();\
-extern void rime_require_module_lua();\
-extern void rime_require_module_octagram();\
-// link to default modules explicitly when building static library.\
-static void rime_declare_module_dependencies() {\
-  rime_require_module_core();\
-  rime_require_module_dict();\
-  rime_require_module_gears();\
-  rime_require_module_levers();\
-  rime_require_module_lua();\
-  rime_require_module_octagram();\
-}\
-#endif' src/rime_api.cc
+
+# Work around an upstream mistake. (hchunhui/librime-lua#300)
+(cd plugins/lua; sed -i '' 's/LUA_LIBRARIES/LUA_LDFLAGS/' CMakeLists.txt)
+
+# HACK: Force generation of rime.pc
+sed -i '' 's/MINGW/APPLE/' CMakeLists.txt
 
 # Build librime
 ARGS=(
