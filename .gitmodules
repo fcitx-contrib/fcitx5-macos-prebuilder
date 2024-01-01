@@ -7,3 +7,12 @@
 [submodule "libthai"]
 	path = libthai
 	url = https://github.com/tlwg/libthai
+[submodule "librime"]
+	path = librime
+	url = https://github.com/rime/librime
+[submodule "librime-lua"]
+	path = librime-lua
+	url = https://github.com/hchunhui/librime-lua
+[submodule "librime-octagram"]
+	path = librime-octagram
+	url = https://github.com/lotem/librime-octagram
