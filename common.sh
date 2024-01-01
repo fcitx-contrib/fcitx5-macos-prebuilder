@@ -25,7 +25,8 @@ f5m_build() {
 }
 
 f5m_install() {
-  DESTDIR=$ROOT/build/$1 cmake --install build
+  cmake --install build # install for other dependencies
+  DESTDIR=$ROOT/build/$1 cmake --install build # install for package
 }
 
 f5m_make_tarball() {
