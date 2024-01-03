@@ -12,8 +12,12 @@ else
   HOMEBREW_PREFIX=/opt/homebrew
 fi
 
+: "${CMAKE_BUILD_TYPE:=Release}"
+
 f5m_configure() {
+  rm -rf build
   PKG_CONFIG_PATH=$HOMEBREW_PREFIX/lib/pkgconfig cmake -B build -G Ninja \
+    -DBUILD_SHARED_LIBS=OFF \
     -DCMAKE_INSTALL_PREFIX=$HOMEBREW_PREFIX \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_FIND_ROOT_PATH="/Library/Input Methods/Fcitx5.app/Contents;$HOMEBREW_PREFIX;$CMAKE_FIND_ROOT_PATH" \
