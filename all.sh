@@ -5,6 +5,9 @@ all_packages=(
   opencc
   libime
   libthai
+  glog
+  leveldb
+  yaml-cpp
   librime
 )
 
