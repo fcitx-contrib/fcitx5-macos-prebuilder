@@ -7,6 +7,9 @@
 [submodule "libthai"]
 	path = libthai
 	url = https://github.com/tlwg/libthai
+[submodule "opencc"]
+	path = opencc
+	url = https://github.com/BYVoid/OpenCC
 [submodule "librime"]
 	path = librime
 	url = https://github.com/rime/librime
