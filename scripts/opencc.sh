@@ -3,7 +3,7 @@ set -e
 cd opencc
 
 ARGS=(
-  -DCMAKE_CXX_FLAGS="-I$HOMEBREW_PREFIX/include"
+  -DCMAKE_CXX_FLAGS="-I$INSTALL_PREFIX/include"
   -DUSE_SYSTEM_MARISA:BOOL=ON
 )
 
