@@ -5,6 +5,7 @@ all_packages=(
   opencc
   libime
   libthai
+  librime
 )
 
 for package in "${all_packages[@]}"; do
