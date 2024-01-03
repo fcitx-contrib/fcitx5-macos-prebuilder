@@ -17,11 +17,12 @@ fi
 
 f5m_configure() {
   rm -rf build
+  # CMAKE_FIND_ROOT_PATH needs HOMEBREW_PREFIX for boost on arm64
   PKG_CONFIG_PATH=$INSTALL_PREFIX/lib/pkgconfig:$HOMEBREW_PREFIX/lib/pkgconfig cmake -B build -G Ninja \
     -DBUILD_SHARED_LIBS=OFF \
     -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX \
     -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_FIND_ROOT_PATH="/Library/Input Methods/Fcitx5.app/Contents" \
+    -DCMAKE_FIND_ROOT_PATH="/Library/Input Methods/Fcitx5.app/Contents;$HOMEBREW_PREFIX" \
     -DCMAKE_OSX_ARCHITECTURES=$ARCH "$@"
 }
 
