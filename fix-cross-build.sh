@@ -5,6 +5,7 @@ fi
 
 broken_packages=(
   libime
+  opencc
 )
 
 ROOT=`pwd`
