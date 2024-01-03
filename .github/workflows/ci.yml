@@ -25,7 +25,7 @@ jobs:
           brew install \
             boost \
             extra-cmake-modules \
-            glog gflags yaml-cpp leveldb opencc lua \
+            glog gflags yaml-cpp leveldb lua \
             ninja
 
       - name: Setup arm homebrew
@@ -40,7 +40,7 @@ jobs:
             ninja
           arm-brew-install \
             zstd \
-            glog gflags yaml-cpp leveldb opencc lua \
+            glog gflags yaml-cpp leveldb lua \
             boost
 
       - name: Download and extract Fcitx5.app
