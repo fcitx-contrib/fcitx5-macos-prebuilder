@@ -2,6 +2,9 @@ set -e
 . ./common.sh $1
 cd libime
 
+git reset --hard
+git apply ../patches/libime.patch
+
 ARGS=(
   -DENABLE_TEST=OFF
 )
