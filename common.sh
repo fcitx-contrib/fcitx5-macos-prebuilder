@@ -15,10 +15,13 @@ fi
 
 : "${CMAKE_BUILD_TYPE:=Release}"
 
+src=.
+build=build
+
 f5m_configure() {
-  rm -rf build
+  rm -rf $build
   # CMAKE_FIND_ROOT_PATH needs HOMEBREW_PREFIX for boost on arm64
-  PKG_CONFIG_PATH=$INSTALL_PREFIX/lib/pkgconfig:$HOMEBREW_PREFIX/lib/pkgconfig cmake -B build -G Ninja \
+  PKG_CONFIG_PATH=$INSTALL_PREFIX/lib/pkgconfig:$HOMEBREW_PREFIX/lib/pkgconfig cmake -S $src -B $build -G Ninja \
     -DBUILD_SHARED_LIBS=OFF \
     -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX \
     -DCMAKE_BUILD_TYPE=Release \
@@ -27,12 +30,12 @@ f5m_configure() {
 }
 
 f5m_build() {
-  cmake --build build
+  cmake --build $build
 }
 
 f5m_install() {
-  cmake --install build # install for other dependencies
-  DESTDIR=$ROOT/build/$1 cmake --install build # install for package
+  cmake --install $build # install for other dependencies
+  DESTDIR=$ROOT/build/$1 cmake --install $build # install for package
 }
 
 f5m_make_tarball() {
