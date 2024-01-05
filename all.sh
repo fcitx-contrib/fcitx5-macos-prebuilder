@@ -3,6 +3,7 @@ set -e
 all_packages=(
   marisa
   opencc
+  zstd
   libime
   libthai
   glog

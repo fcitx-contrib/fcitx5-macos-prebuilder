@@ -39,7 +39,6 @@ jobs:
             extra-cmake-modules \
             ninja
           arm-brew-install \
-            zstd \
             lua \
             boost
 
