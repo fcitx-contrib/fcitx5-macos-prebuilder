@@ -11,7 +11,7 @@ boost_tar="$boost_dir.tar.xz"
 cd $boost_dir
 
 ARGS=(
-  -DBOOST_INCLUDE_LIBRARIES="algorithm;bimap;container;iostreams;multi_index;ptr_container"
+  -DBOOST_INCLUDE_LIBRARIES="algorithm;bimap;container;crc;interprocess;iostreams;multi_index;ptr_container;scope_exit;signals2;uuid"
 )
 
 f5m_configure "${ARGS[@]}"
