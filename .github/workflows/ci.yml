@@ -23,7 +23,6 @@ jobs:
         if: ${{ matrix.arch == 'x86_64' }}
         run: |
           brew install \
-            boost \
             extra-cmake-modules \
             lua \
             ninja
@@ -39,8 +38,7 @@ jobs:
             extra-cmake-modules \
             ninja
           arm-brew-install \
-            lua \
-            boost
+            lua
 
       - name: Download and extract Fcitx5.app
         run: |
