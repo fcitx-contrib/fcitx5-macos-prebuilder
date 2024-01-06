@@ -7,6 +7,7 @@ all_packages=(
   json-glib
   libgee
   libskk
+  lua
   fmt
   json-c
   marisa

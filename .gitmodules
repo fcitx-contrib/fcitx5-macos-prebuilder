@@ -55,3 +55,6 @@
 [submodule "libxkbcommon"]
 	path = libxkbcommon
 	url = https://github.com/xkbcommon/libxkbcommon
+[submodule "lua"]
+	path = lua
+	url = https://github.com/lua/lua
