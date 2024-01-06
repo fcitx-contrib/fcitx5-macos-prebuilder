@@ -4,6 +4,7 @@ all_packages=(
   marisa
   opencc
   zstd
+  boost
   libime
   libthai
   glog
