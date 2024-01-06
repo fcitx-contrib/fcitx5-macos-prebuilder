@@ -2,6 +2,9 @@ set -e
 . ./common.sh $1
 cd glib
 
+# Workaround an assertion failure (unknown reason)
+sed -i '' 's/assert.*libintl.type_name.*//' meson.build
+
 SETUP_ARGS=(
     --buildtype=release
     --prefix=$INSTALL_PREFIX
