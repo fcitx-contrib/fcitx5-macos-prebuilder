@@ -11,6 +11,7 @@ SETUP_ARGS=(
     -Denable-docs=false
     -Denable-wayland=false
     -Denable-bash-completion=false
+    -Denable-xkbregistry=false
 )
 if [[ $ARCH == "arm64" ]]; then
     SETUP_ARGS+=(--cross-file=../scripts/meson-cross-arm64.ini)
