@@ -19,26 +19,11 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Install dependencies (x86)
-        if: ${{ matrix.arch == 'x86_64' }}
-        run: |
-          brew install \
-            extra-cmake-modules \
-            lua \
-            ninja
-
-      - name: Setup arm homebrew
-        if: ${{ matrix.arch == 'arm64' }}
-        uses: fcitx-contrib/macos-cross@master
-
-      - name: Install dependencies (arm)
-        if: ${{ matrix.arch == 'arm64' }}
+      - name: Install dependencies
         run: |
           brew install \
             extra-cmake-modules \
             ninja
-          arm-brew-install \
-            lua
 
       - name: Download and extract Fcitx5.app
         run: |

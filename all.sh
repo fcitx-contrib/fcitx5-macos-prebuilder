@@ -1,6 +1,7 @@
 set -e
 
 all_packages=(
+  lua
   fmt
   json-c
   marisa
