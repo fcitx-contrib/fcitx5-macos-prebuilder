@@ -52,3 +52,6 @@
 [submodule "json-c"]
 	path = json-c
 	url = https://github.com/json-c/json-c
+[submodule "libxkbcommon"]
+	path = libxkbcommon
+	url = https://github.com/xkbcommon/libxkbcommon

@@ -1,6 +1,7 @@
 set -e
 
 all_packages=(
+  libxkbcommon
   pcre2
   glib
   json-glib
