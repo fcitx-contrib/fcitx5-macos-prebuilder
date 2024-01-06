@@ -12,6 +12,10 @@ cd $boost_dir
 
 ARGS=(
   -DBOOST_INCLUDE_LIBRARIES="algorithm;bimap;container;crc;interprocess;iostreams;multi_index;ptr_container;scope_exit;signals2;uuid"
+  -DBOOST_IOSTREAMS_ENABLE_BZIP2=Off
+  -DBOOST_IOSTREAMS_ENABLE_ZLIB=Off
+  -DBOOST_IOSTREAMS_ENABLE_LZMA=Off
+  -DBOOST_IOSTREAMS_ENABLE_ZSTD=Off
 )
 
 f5m_configure "${ARGS[@]}"
