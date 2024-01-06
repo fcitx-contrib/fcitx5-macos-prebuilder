@@ -46,3 +46,9 @@
 [submodule "pcre2"]
 	path = pcre2
 	url = https://github.com/PCRE2Project/pcre2
+[submodule "fmt"]
+	path = fmt
+	url = https://github.com/fmtlib/fmt
+[submodule "json-c"]
+	path = json-c
+	url = https://github.com/json-c/json-c

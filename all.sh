@@ -6,6 +6,8 @@ all_packages=(
   json-glib
   libgee
   libskk
+  fmt
+  json-c
   marisa
   opencc
   zstd
