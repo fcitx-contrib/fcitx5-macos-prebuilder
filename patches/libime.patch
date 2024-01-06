@@ -1,3 +1,16 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 0446f24..2cb88ab 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -34,7 +34,7 @@ pkg_check_modules(ZSTD REQUIRED IMPORTED_TARGET "libzstd")
+ find_package(Fcitx5Utils REQUIRED)
+ include("${FCITX_INSTALL_CMAKECONFIG_DIR}/Fcitx5Utils/Fcitx5CompilerSettings.cmake")
+ 
+-find_package(Boost 1.61 REQUIRED COMPONENTS iostreams filesystem)
++find_package(Boost 1.61 REQUIRED COMPONENTS iostreams)
+ set(LIBIME_INSTALL_PKGDATADIR "${CMAKE_INSTALL_FULL_DATADIR}/libime")
+ set(LIBIME_INSTALL_LIBDATADIR "${CMAKE_INSTALL_FULL_LIBDIR}/libime")
+ 
 diff --git a/src/libime/core/CMakeLists.txt b/src/libime/core/CMakeLists.txt
 index 89dd191..ed3f1b5 100644
 --- a/src/libime/core/CMakeLists.txt
