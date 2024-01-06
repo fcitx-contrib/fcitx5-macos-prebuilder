@@ -2,6 +2,7 @@ set -e
 
 all_packages=(
   fmt
+  json-c
   marisa
   opencc
   zstd
