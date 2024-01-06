@@ -25,7 +25,7 @@ jobs:
           brew install \
             extra-cmake-modules \
             autoconf automake libtool autoconf-archive gobject-introspection \
-            meson \
+            meson byacc \
             lua \
             ninja vala
 
@@ -39,7 +39,7 @@ jobs:
           brew install \
             extra-cmake-modules \
             autoconf automake libtool autoconf-archive gobject-introspection \
-            meson \
+            meson byacc \
             ninja vala
           arm-brew-install \
             lua

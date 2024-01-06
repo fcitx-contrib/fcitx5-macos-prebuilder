@@ -6,7 +6,7 @@ if [[ ! -f configure ]]; then
     autoreconf -i
 fi
 
-export PKG_CONFIG_PATH="$INSTALL_PREFIX/lib/pkgconfig:$HOMEBREW_PREFIX/lib/pkgconfig"
+export PKG_CONFIG_PATH="$INSTALL_PREFIX/lib/pkgconfig"
 export CFLAGS="-arch $ARCH"
 export LDFLAGS="-arch $ARCH"
 ./configure                    \
