@@ -31,3 +31,18 @@
 [submodule "zstd"]
 	path = zstd
 	url = https://github.com/facebook/zstd
+[submodule "libskk"]
+	path = libskk
+	url = https://github.com/ueno/libskk
+[submodule "json-glib"]
+	path = json-glib
+	url = https://github.com/GNOME/json-glib
+[submodule "libgee"]
+	path = libgee
+	url = https://github.com/GNOME/libgee
+[submodule "glib"]
+	path = glib
+	url = https://github.com/GNOME/glib
+[submodule "pcre2"]
+	path = pcre2
+	url = https://github.com/PCRE2Project/pcre2

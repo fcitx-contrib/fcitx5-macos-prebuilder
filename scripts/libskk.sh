@@ -1,0 +1,26 @@
+set -e
+. ./common.sh $1
+cd libskk
+
+# Disable tools and tests
+sed -i '' 's/SUBDIRS = .*/SUBDIRS = libskk rules po/' Makefile.am
+
+# Fix upstream libskk.pc
+cp ../patches/libskk.pc.in libskk/libskk.pc.in
+
+if [[ ! -f configure ]]; then
+    autoreconf -i
+fi
+
+export PKG_CONFIG_PATH="$INSTALL_PREFIX/lib/pkgconfig:$HOMEBREW_PREFIX/lib/pkgconfig"
+export CFLAGS="-arch $ARCH"
+export LDFLAGS="-arch $ARCH"
+./configure                    \
+    -C                         \
+    --prefix=$INSTALL_PREFIX   \
+    --host=$ARCH               \
+    --disable-docs
+make VERBOSE=1 -j8
+DESTDIR=$ROOT/build/libskk make install
+
+f5m_make_tarball libskk

@@ -1,6 +1,11 @@
 set -e
 
 all_packages=(
+  pcre2
+  glib
+  json-glib
+  libgee
+  libskk
   marisa
   opencc
   zstd
