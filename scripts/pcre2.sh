@@ -16,7 +16,7 @@ export LDFLAGS="-arch $ARCH"
 
 make -j8
 
-export DESTDIR=$ROOT/build/pcre2
 make install
+DESTDIR=$ROOT/build/pcre2 make install
 
 f5m_make_tarball pcre2

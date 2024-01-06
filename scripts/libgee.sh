@@ -20,6 +20,7 @@ export LDFLAGS="-arch $ARCH"
 
 make -j8
 
+make install
 DESTDIR=$ROOT/build/$PKGNAME make install
 
 f5m_make_tarball $PKGNAME

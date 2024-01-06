@@ -16,5 +16,6 @@ fi
 meson setup build ${SETUP_ARGS[@]}
 ninja -C build clean
 ninja -C build
+ninja -C build install
 DESTDIR=$ROOT/build/glib ninja -C build install
 f5m_make_tarball glib

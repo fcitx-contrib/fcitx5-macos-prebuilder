@@ -20,7 +20,8 @@ export LDFLAGS="-arch $ARCH"
     --prefix=$INSTALL_PREFIX   \
     --host=$ARCH               \
     --disable-docs
-make VERBOSE=1 -j8
+make -j8
+make install
 DESTDIR=$ROOT/build/libskk make install
 
 f5m_make_tarball libskk
