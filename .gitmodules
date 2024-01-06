@@ -31,3 +31,6 @@
 [submodule "zstd"]
 	path = zstd
 	url = https://github.com/facebook/zstd
+[submodule "fmt"]
+	path = fmt
+	url = https://github.com/fmtlib/fmt

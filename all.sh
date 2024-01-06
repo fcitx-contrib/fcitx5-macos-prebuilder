@@ -1,6 +1,7 @@
 set -e
 
 all_packages=(
+  fmt
   marisa
   opencc
   zstd
