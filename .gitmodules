@@ -61,3 +61,6 @@
 [submodule "libexpat"]
 	path = libexpat
 	url = https://github.com/libexpat/libexpat
+[submodule "libintl-lite"]
+	path = libintl-lite
+	url = https://github.com/j-jorge/libintl-lite
