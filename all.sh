@@ -1,6 +1,7 @@
 set -e
 
 all_packages=(
+  expat
   libxkbcommon
   pcre2
   glib
