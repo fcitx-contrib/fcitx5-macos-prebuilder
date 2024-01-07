@@ -58,3 +58,6 @@
 [submodule "lua"]
 	path = lua
 	url = https://github.com/lua/lua
+[submodule "libexpat"]
+	path = libexpat
+	url = https://github.com/libexpat/libexpat
