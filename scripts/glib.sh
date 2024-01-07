@@ -6,7 +6,7 @@ cd glib
 sed -i '' "/^libintl_deps = \[\]/,/^glib_conf.set('HAVE_BIND_TEXTDOMAIN_CODESET', have_bind_textdomain_codeset)/c\\
  intl_proj = subproject('proxy-libintl')\\
  intl_dep = intl_proj.get_variable('intl_dep')\\
- intl_deps = [intl_dep]\\
+ libintl_deps = [intl_dep]\\
  glib_conf.set('HAVE_BIND_TEXTDOMAIN_CODESET', true)\\
  " meson.build
 
