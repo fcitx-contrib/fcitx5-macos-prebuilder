@@ -1,6 +1,7 @@
 set -e
 
 all_packages=(
+  libuv
   libintl
   expat
   libxkbcommon

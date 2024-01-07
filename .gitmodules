@@ -64,3 +64,6 @@
 [submodule "libintl-lite"]
 	path = libintl-lite
 	url = https://github.com/j-jorge/libintl-lite
+[submodule "libuv"]
+	path = libuv
+	url = https://github.com/libuv/libuv
