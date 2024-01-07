@@ -24,8 +24,8 @@ jobs:
           brew install \
             extra-cmake-modules \
             autoconf automake libtool autoconf-archive gobject-introspection \
-            meson byacc \
-            ninja vala
+            meson byacc vala \
+            ninja
 
       - name: Download and extract Fcitx5.app
         run: |

@@ -3,21 +3,21 @@ set -e
 cd libxkbcommon
 
 SETUP_ARGS=(
-    --buildtype=release
-    --prefix=$INSTALL_PREFIX
-    --default-library=static
-    -Denable-tools=false
-    -Denable-x11=false
-    -Denable-docs=false
-    -Denable-wayland=false
-    -Denable-bash-completion=false
-    -Denable-xkbregistry=false
+  --buildtype=release
+  --prefix=$INSTALL_PREFIX
+  --default-library=static
+  -Denable-tools=false
+  -Denable-x11=false
+  -Denable-docs=false
+  -Denable-wayland=false
+  -Denable-bash-completion=false
+  -Denable-xkbregistry=false
 )
 if [[ $ARCH == "arm64" ]]; then
-    SETUP_ARGS+=(--cross-file=../scripts/meson-cross-arm64.ini)
+  SETUP_ARGS+=(--cross-file=../scripts/meson-cross-arm64.ini)
 fi
 
-meson setup build ${SETUP_ARGS[@]}
+meson setup build "${SETUP_ARGS[@]}"
 ninja -C build clean
 ninja -C build
 ninja -C build install

@@ -9,18 +9,18 @@ sed -i '' 's/SUBDIRS = .*/SUBDIRS = libskk rules po/' Makefile.am
 cp ../patches/libskk.pc.in libskk/libskk.pc.in
 
 if [[ ! -f configure ]]; then
-    autoreconf -i
+  autoreconf -i
 fi
 
 export PKG_CONFIG_PATH="$INSTALL_PREFIX/lib/pkgconfig"
 export CFLAGS="-arch $ARCH"
 export LDFLAGS="-arch $ARCH"
 export XDG_DATA_DIRS="$INSTALL_PREFIX/share"
-./configure                    \
-    -C                         \
-    --prefix=$INSTALL_PREFIX   \
-    --host=$ARCH               \
-    --disable-docs
+./configure \
+  -C \
+  --prefix=$INSTALL_PREFIX \
+  --host=$ARCH \
+  --disable-docs
 make -j8
 make install
 DESTDIR=$ROOT/build/libskk make install
