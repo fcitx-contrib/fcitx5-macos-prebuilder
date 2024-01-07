@@ -5,10 +5,13 @@ cd opencc
 ARGS=(
   -DCMAKE_CXX_FLAGS="-I$INSTALL_PREFIX/include"
   -DUSE_SYSTEM_MARISA:BOOL=ON
+  -DENABLE_DARTS=OFF
 )
 
+git reset --hard
+# Do not let opencc search config in INSTALL_PREFIX
+sed -i '' '/  -DPKGDATADIR="${DIR_SHARE_OPENCC}"/d' CMakeLists.txt
 if [[ $ARCH != `uname -m` ]]; then
-  git reset --hard
   sed -i '' 's/add_subdirectory(data)//' CMakeLists.txt
 fi
 
