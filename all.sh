@@ -1,6 +1,7 @@
 set -e
 
 all_packages=(
+  libintl
   expat
   libxkbcommon
   pcre2
