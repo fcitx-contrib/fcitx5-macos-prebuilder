@@ -35,3 +35,5 @@ f5m_make_tarball() {
   cd $ROOT/build/$1$INSTALL_PREFIX
   tar cjvf $ROOT/build/$1-$ARCH.tar.bz2 *
 }
+
+set -x

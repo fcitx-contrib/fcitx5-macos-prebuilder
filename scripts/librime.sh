@@ -5,7 +5,7 @@ cd librime
 # Enable plugins
 rime_plugins=(lua octagram)
 pushd plugins
-for plugin in ${rime_plugins[@]}; do
+for plugin in "${rime_plugins[@]}"; do
   [[ -L "$plugin" ]] || ln -s ../../librime-$plugin $plugin
 done
 popd
@@ -19,7 +19,7 @@ ARGS=(
   -DBUILD_MERGED_PLUGINS:BOOL=ON
   -DENABLE_EXTERNAL_PLUGINS:BOOL=OFF
 )
-f5m_configure ${ARGS[@]}
+f5m_configure "${ARGS[@]}"
 f5m_build
 f5m_install librime
 f5m_make_tarball librime
