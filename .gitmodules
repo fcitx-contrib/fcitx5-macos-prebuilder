@@ -67,3 +67,6 @@
 [submodule "libuv"]
 	path = libuv
 	url = https://github.com/libuv/libuv
+[submodule "default-icon-theme"]
+	path = default-icon-theme
+	url = https://gitlab.freedesktop.org/xdg/default-icon-theme.git

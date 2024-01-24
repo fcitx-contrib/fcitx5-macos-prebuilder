@@ -1,6 +1,7 @@
 set -e
 
 all_packages=(
+  default-icon-theme
   libuv
   libintl
   expat
