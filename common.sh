@@ -19,8 +19,9 @@ f5m_configure() {
     -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_FIND_ROOT_PATH="/Library/Input Methods/Fcitx5.app/Contents" \
-    -DCMAKE_OSX_ARCHITECTURES=$ARCH "$@" \
-    -DCMAKE_OSX_DEPLOYMENT_TARGET=11
+    -DCMAKE_OSX_ARCHITECTURES=$ARCH \
+    -DCMAKE_OSX_DEPLOYMENT_TARGET=11 \
+    "$@"
 }
 
 f5m_build() {
