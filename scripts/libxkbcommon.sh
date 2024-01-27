@@ -3,6 +3,7 @@ set -e
 cd libxkbcommon
 
 SETUP_ARGS=(
+  --native-file=../scripts/meson-native-x86_64.ini
   --buildtype=release
   --prefix=$INSTALL_PREFIX
   --default-library=static

@@ -11,6 +11,7 @@ sed -i '' "/^libintl_deps = \[\]/,/^glib_conf.set('HAVE_BIND_TEXTDOMAIN_CODESET'
  " meson.build
 
 SETUP_ARGS=(
+  --native-file=../scripts/meson-native-x86_64.ini
   --buildtype=release
   --prefix=$INSTALL_PREFIX
   -Dtests=false
