@@ -17,10 +17,10 @@ f5m_configure() {
   PKG_CONFIG_PATH=$INSTALL_PREFIX/lib/pkgconfig cmake -S $src -B $build -G Ninja \
     -DBUILD_SHARED_LIBS=OFF \
     -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX \
-    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_BUILD_TYPE=$CMAKE_BUILD_TYPE \
     -DCMAKE_FIND_ROOT_PATH="/Library/Input Methods/Fcitx5.app/Contents" \
     -DCMAKE_OSX_ARCHITECTURES=$ARCH \
-    -DCMAKE_OSX_DEPLOYMENT_TARGET=11 \
+    -DCMAKE_OSX_DEPLOYMENT_TARGET=13 \
     "$@"
 }
 
