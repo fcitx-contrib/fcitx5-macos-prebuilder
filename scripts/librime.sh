@@ -3,7 +3,7 @@ set -e
 cd librime
 
 # Enable plugins
-rime_plugins=(lua octagram)
+rime_plugins=(lua octagram predict)
 pushd plugins
 for plugin in "${rime_plugins[@]}"; do
   [[ -L "$plugin" ]] || ln -s ../../librime-$plugin $plugin
