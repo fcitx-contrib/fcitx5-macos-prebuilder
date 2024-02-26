@@ -29,6 +29,7 @@ jobs:
             autoconf automake libtool autoconf-archive gobject-introspection \
             meson byacc vala \
             ninja
+          pip install packaging # needed by glib
 
       - name: Download and extract Fcitx5.app
         run: |
