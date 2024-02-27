@@ -31,9 +31,9 @@ jobs:
           brew install \
             extra-cmake-modules \
             autoconf automake libtool autoconf-archive gobject-introspection \
-            meson byacc vala \
+            byacc vala \
             ninja
-          pip install packaging # needed by glib
+          pip install packaging meson==1.3.1 # 1.3.2 can't find python
 
       - name: Download and extract Fcitx5.app
         run: |
