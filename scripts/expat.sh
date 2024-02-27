@@ -5,6 +5,8 @@ src=expat
 
 ARGS=(
   -DEXPAT_BUILD_TOOLS=OFF
+  -DEXPAT_BUILD_EXAMPLES=OFF
+  -DEXPAT_BUILD_TESTS=OFF
 )
 
 f5m_configure "${ARGS[@]}"
