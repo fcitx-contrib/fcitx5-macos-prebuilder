@@ -27,12 +27,11 @@ jobs:
           HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK: 1
         run: |
           brew install \
-            python@3.12 \
             extra-cmake-modules \
             autoconf automake libtool autoconf-archive gobject-introspection \
             byacc vala \
+            meson \
             ninja
-          pip install packaging meson==1.3.1 # 1.3.2 can't find python
 
       - name: Download and extract Fcitx5.app
         run: |
