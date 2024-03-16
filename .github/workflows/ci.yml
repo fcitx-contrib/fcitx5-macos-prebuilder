@@ -27,6 +27,8 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
+        env:
+          HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK: 1
         run: |
           brew install \
             extra-cmake-modules \
