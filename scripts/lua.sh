@@ -3,7 +3,7 @@ set -e
 cd lua
 
 make clean
-make a CFLAGS="-O3 -arch ${ARCH}"
+make a -j10 CFLAGS="-O3 -arch ${ARCH} -DLUA_USE_MACOSX"
 
 include_dir=$ROOT/build/lua$INSTALL_PREFIX/include
 lib_dir=$ROOT/build/lua$INSTALL_PREFIX/lib
