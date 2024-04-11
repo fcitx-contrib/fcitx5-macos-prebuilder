@@ -1,0 +1,27 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 03903b9..d64e838 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -34,6 +34,7 @@ configure_package_config_file(
+     LibIntlConfig.cmake.in
+     "${CMAKE_CURRENT_BINARY_DIR}/LibIntlConfig.cmake"
+     INSTALL_DESTINATION "lib/cmake"
++    PATH_VARS CMAKE_INSTALL_INCLUDEDIR CMAKE_INSTALL_LIBDIR
+ )
+ 
+ install(FILES "${CMAKE_CURRENT_BINARY_DIR}/LibIntlConfig.cmake"
+diff --git a/LibIntlConfig.cmake.in b/LibIntlConfig.cmake.in
+index 90197d8..6593bee 100644
+--- a/LibIntlConfig.cmake.in
++++ b/LibIntlConfig.cmake.in
+@@ -2,8 +2,8 @@
+ 
+ include("${CMAKE_CURRENT_LIST_DIR}/LibIntlTargets.cmake")
+ 
+-set_and_check(LibIntl_INCLUDE_DIR "${PACKAGE_PREFIX_DIR}/include")
+-set_and_check(LibIntl_LIBRARY "${PACKAGE_PREFIX_DIR}/lib/libintl.a")
++set_and_check(LibIntl_INCLUDE_DIR @PACKAGE_CMAKE_INSTALL_INCLUDEDIR@)
++set_and_check(LibIntl_LIBRARY "@PACKAGE_CMAKE_INSTALL_LIBDIR@/libintl.a")
+ add_library(LibIntl::LibIntl ALIAS intl)
+ 
+ check_required_components(LibIntl)
