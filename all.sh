@@ -24,6 +24,7 @@ all_packages=(
   leveldb
   yaml-cpp
   librime
+  anthy-unicode
 )
 
 for package in "${all_packages[@]}"; do
