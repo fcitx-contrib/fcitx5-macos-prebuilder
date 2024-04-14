@@ -5,12 +5,6 @@ all_packages=(
   libuv
   libintl
   expat
-  libxkbcommon
-  pcre2
-  glib
-  json-glib
-  libgee
-  libskk
   lua
   fmt
   json-c
