@@ -28,6 +28,7 @@ jobs:
         run: |
           brew install \
             extra-cmake-modules \
+            autoconf \
             ninja || true # ignore brew link python error
 
       - name: Download and extract Fcitx5.app
