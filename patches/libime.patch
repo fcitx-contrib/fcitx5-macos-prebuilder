@@ -1,5 +1,5 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 1a05011..19c37c4 100644
+index 5ca9241..323dd8a 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -34,7 +34,7 @@ pkg_check_modules(ZSTD REQUIRED IMPORTED_TARGET "libzstd")
@@ -34,10 +34,10 @@ index 89dd191..ed3f1b5 100644
  
  add_library(LibIME::Core ALIAS IMECore)
 diff --git a/src/libime/pinyin/CMakeLists.txt b/src/libime/pinyin/CMakeLists.txt
-index 4da3068..d951860 100644
+index a5e6d35..601d559 100644
 --- a/src/libime/pinyin/CMakeLists.txt
 +++ b/src/libime/pinyin/CMakeLists.txt
-@@ -30,7 +30,7 @@ ecm_setup_version(PROJECT
+@@ -32,7 +32,7 @@ ecm_setup_version(PROJECT
                    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/LibIMEPinyinConfigVersion.cmake")
  set(IMEPinyin_SOVERSION 0)
  
