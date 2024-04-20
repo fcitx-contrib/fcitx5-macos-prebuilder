@@ -1,6 +1,7 @@
 set -e
 
 all_packages=(
+  anthy-unicode
   default-icon-theme
   libuv
   libintl
@@ -18,7 +19,6 @@ all_packages=(
   leveldb
   yaml-cpp
   librime
-  anthy-unicode
 )
 
 for package in "${all_packages[@]}"; do
