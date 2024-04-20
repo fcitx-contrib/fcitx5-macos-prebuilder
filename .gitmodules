@@ -73,3 +73,6 @@
 [submodule "librime-predict"]
 	path = librime-predict
 	url = https://github.com/rime/librime-predict
+[submodule "anthy-cmake"]
+	path = anthy-cmake
+	url = https://github.com/fcitx5-android/anthy-cmake.git

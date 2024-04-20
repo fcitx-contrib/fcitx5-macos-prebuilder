@@ -1,6 +1,7 @@
 set -e
 
 all_packages=(
+  anthy-unicode
   default-icon-theme
   libuv
   libintl
