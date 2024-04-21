@@ -10,9 +10,6 @@ for plugin in "${rime_plugins[@]}"; do
 done
 popd
 
-# Work around an upstream mistake. (hchunhui/librime-lua#300)
-(cd plugins/lua; sed -i '' 's/LUA_LIBRARIES/LUA_LDFLAGS/' CMakeLists.txt)
-
 # Build librime
 ARGS=(
   -DBUILD_TEST:BOOL=OFF

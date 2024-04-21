@@ -1,10 +1,10 @@
 set -e
 . ./common.sh $1
 
-boost_version="1.84.0"
+boost_version="1.85.0"
 
 boost_dir="boost-$boost_version"
-boost_tar="$boost_dir.tar.xz"
+boost_tar="$boost_dir-cmake.tar.xz"
 [[ -f $boost_tar ]] || wget https://github.com/boostorg/boost/releases/download/$boost_dir/$boost_tar
 [[ -d $boost_dir ]] || tar xJf $boost_tar
 
