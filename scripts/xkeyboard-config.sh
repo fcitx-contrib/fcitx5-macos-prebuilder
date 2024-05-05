@@ -2,6 +2,9 @@ set -e
 . ./common.sh $1
 cd xkeyboard-config
 
+sed -i '' "s|format(dir_data)|format('/Library/Input Methods/Fcitx5.app/Contents/share')|" meson.build
+sed -i '' "s|format(dir_xkb_base)|format('/Library/Input Methods/Fcitx5.app/Contents/share/X11/xkb')|" meson.build
+
 SETUP_ARGS=(
   --native-file=../scripts/meson-native-x86_64.ini
   --buildtype=release
