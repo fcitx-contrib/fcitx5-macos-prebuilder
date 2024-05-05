@@ -2,6 +2,7 @@ set -e
 
 all_packages=(
   iso-codes
+  xkeyboard-config
   anthy-unicode
   default-icon-theme
   libuv
