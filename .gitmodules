@@ -76,3 +76,6 @@
 [submodule "anthy-cmake"]
 	path = anthy-cmake
 	url = https://github.com/fcitx5-android/anthy-cmake.git
+[submodule "iso-codes"]
+	path = iso-codes
+	url = https://salsa.debian.org/iso-codes-team/iso-codes
