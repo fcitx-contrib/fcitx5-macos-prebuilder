@@ -2,7 +2,7 @@ set -e
 . ./common.sh $1
 cd anthy-cmake
 
-f5m_configure "${ARGS[@]}"
+f5m_configure
 f5m_build
 f5m_install anthy-unicode
 

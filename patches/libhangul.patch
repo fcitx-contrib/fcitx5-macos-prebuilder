@@ -1,0 +1,26 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 8aafe38..0f22534 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -50,7 +50,7 @@ set(LIBHANGUL_LIBRARY_DIR "${CMAKE_INSTALL_LIBDIR}")
+ add_subdirectory(hangul)
+ add_subdirectory(data/hanja)
+ add_subdirectory(data/keyboards)
+-add_subdirectory(tools)
++# add_subdirectory(tools)
+ add_subdirectory(po)
+ 
+ if(BUILD_TESTING)
+@@ -88,3 +88,12 @@ install(
+     COMPONENT
+         dev
+ )
++
++configure_file(libhangul.pc.in "${CMAKE_CURRENT_BINARY_DIR}/libhangul.pc" @ONLY)
++
++install(
++  FILES
++    "${CMAKE_CURRENT_BINARY_DIR}/libhangul.pc"
++  DESTINATION
++    "${CMAKE_INSTALL_LIBDIR}/pkgconfig"
++)
