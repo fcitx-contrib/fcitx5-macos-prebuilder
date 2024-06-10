@@ -1,6 +1,8 @@
 set -e
 
 all_packages=(
+  libchewing
+  libhangul
   iso-codes
   xkeyboard-config
   anthy-unicode
