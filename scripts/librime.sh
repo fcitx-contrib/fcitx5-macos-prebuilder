@@ -2,6 +2,9 @@ set -e
 . ./common.sh $1
 cd librime
 
+git reset --hard
+git apply ../patches/librime.patch
+
 # Enable plugins
 rime_plugins=(lua octagram predict)
 pushd plugins
