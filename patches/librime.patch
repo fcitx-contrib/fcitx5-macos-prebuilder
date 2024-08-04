@@ -1,8 +1,8 @@
 diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
-index f7594089..28be4898 100644
+index 16082869..c4a5b5ca 100644
 --- a/src/CMakeLists.txt
 +++ b/src/CMakeLists.txt
-@@ -162,6 +162,8 @@ if(BUILD_SHARED_LIBS)
+@@ -166,6 +166,8 @@ if(BUILD_SHARED_LIBS)
  else()
    add_library(rime-static STATIC ${rime_src})
    target_link_libraries(rime-static ${rime_deps})
@@ -43,6 +43,25 @@ index 2e1c8b81..94a6b500 100644
  
   protected:
    Engine();
+diff --git a/src/rime/gear/selector.cc b/src/rime/gear/selector.cc
+index 06874103..0c4db888 100644
+--- a/src/rime/gear/selector.cc
++++ b/src/rime/gear/selector.cc
+@@ -50,10 +50,10 @@ Selector::Selector(const Ticket& ticket)
+     keymap.Bind({XK_KP_Left, 0}, &Selector::PreviousCandidate);
+     keymap.Bind({XK_Right, 0}, &Selector::NextCandidate);
+     keymap.Bind({XK_KP_Right, 0}, &Selector::NextCandidate);
+-    keymap.Bind({XK_Up, 0}, &Selector::PreviousPage);
+-    keymap.Bind({XK_KP_Up, 0}, &Selector::PreviousPage);
+-    keymap.Bind({XK_Down, 0}, &Selector::NextPage);
+-    keymap.Bind({XK_KP_Down, 0}, &Selector::NextPage);
++    keymap.Bind({XK_Up, 0}, &Selector::PreviousCandidate);
++    keymap.Bind({XK_KP_Up, 0}, &Selector::PreviousCandidate);
++    keymap.Bind({XK_Down, 0}, &Selector::NextCandidate);
++    keymap.Bind({XK_KP_Down, 0}, &Selector::NextCandidate);
+     keymap.Bind({XK_Prior, 0}, &Selector::PreviousPage);
+     keymap.Bind({XK_KP_Prior, 0}, &Selector::PreviousPage);
+     keymap.Bind({XK_Next, 0}, &Selector::NextPage);
 diff --git a/src/rime/service.h b/src/rime/service.h
 index 2b3111af..95ca87dc 100644
 --- a/src/rime/service.h
@@ -61,7 +80,7 @@ index 2b3111af..95ca87dc 100644
    string commit_text_;
  };
 diff --git a/src/rime_api_impl.h b/src/rime_api_impl.h
-index 64aa6052..26c872fc 100644
+index 7749ce98..b0200a67 100644
 --- a/src/rime_api_impl.h
 +++ b/src/rime_api_impl.h
 @@ -15,6 +15,8 @@
@@ -73,7 +92,7 @@ index 64aa6052..26c872fc 100644
  
  #include "rime_api.h"
  
-@@ -425,6 +427,13 @@ RIME_DEPRECATED void RimeSetOption(RimeSessionId session_id,
+@@ -426,6 +428,13 @@ RIME_DEPRECATED void RimeSetOption(RimeSessionId session_id,
    if (!ctx)
      return;
    ctx->set_option(option, !!value);
