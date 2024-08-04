@@ -13,7 +13,7 @@ if [[ ! -f configure ]]; then
 fi
 
 export PKG_CONFIG_PATH="$INSTALL_PREFIX/lib/pkgconfig"
-export CFLAGS="-arch $ARCH"
+export CFLAGS="-arch $ARCH -Wno-int-conversion -Wno-incompatible-function-pointer-types"
 export LDFLAGS="-arch $ARCH"
 export XDG_DATA_DIRS="$INSTALL_PREFIX/share"
 ./configure \

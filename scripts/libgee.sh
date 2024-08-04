@@ -11,7 +11,7 @@ if [[ ! -f configure ]]; then
 fi
 
 export PKG_CONFIG_PATH="$INSTALL_PREFIX/lib/pkgconfig"
-export CFLAGS="-arch $ARCH"
+export CFLAGS="-arch $ARCH -Wno-incompatible-function-pointer-types"
 export LDFLAGS="-arch $ARCH"
 ./configure \
   -C \
