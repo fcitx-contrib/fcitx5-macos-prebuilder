@@ -35,7 +35,7 @@ f5m_install() {
 
 f5m_make_tarball() {
   cd $ROOT/build/$1$INSTALL_PREFIX
-  tar cjvf $ROOT/build/$1-$ARCH.tar.bz2 *
+  tar cjvf $ROOT/build/$1-$ARCH.tar.bz2 --no-xattrs *
 }
 
 set -x
