@@ -6,6 +6,9 @@ cd $PKGNAME
 # Disable tests
 sed -i '' 's/TEST_PROGS += tests/TEST_PROGS +=/' tests/Makefile.am
 
+# Fix build without gobject-introspection
+git apply ../patches/libgee.patch
+
 if [[ ! -f configure ]]; then
   NOCONFIGURE=1 ./autogen.sh
 fi
