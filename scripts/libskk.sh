@@ -8,6 +8,9 @@ sed -i '' 's/SUBDIRS = .*/SUBDIRS = libskk rules po/' Makefile.am
 # Fix upstream libskk.pc
 cp ../patches/libskk.pc.in libskk/libskk.pc.in
 
+# Fix build without gobject-introspection
+git apply ../patches/libskk.patch
+
 if [[ ! -f configure ]]; then
   autoreconf -i
 fi
