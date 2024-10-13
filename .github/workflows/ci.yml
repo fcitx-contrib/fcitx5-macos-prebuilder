@@ -65,10 +65,6 @@ jobs:
         with:
           submodules: recursive
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
       - name: Install dependencies
         env:
           HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK: 1
