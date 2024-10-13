@@ -2,13 +2,7 @@ set -e
 . ./common.sh $1
 cd libskk
 
-# Disable tools and tests
-sed -i '' 's/SUBDIRS = .*/SUBDIRS = libskk rules po/' Makefile.am
-
-# Fix upstream libskk.pc
-cp ../patches/libskk.pc.in libskk/libskk.pc.in
-
-# Fix build without gobject-introspection
+# Fix build without gobject-introspection, disable tools and tests
 git apply ../patches/libskk.patch
 
 if [[ ! -f configure ]]; then
