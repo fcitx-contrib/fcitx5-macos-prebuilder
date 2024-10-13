@@ -1,0 +1,34 @@
+diff --git a/configure.ac b/configure.ac
+index e78082d..ce0811e 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -87,7 +87,6 @@ AC_SUBST(LIBSKK_CFLAGS)
+ LIBSKK_LIBS="$GIO_LIBS $GEE_LIBS $JSON_GLIB_LIBS $XKBCOMMON_LIBS"
+ AC_SUBST(LIBSKK_LIBS)
+ 
+-GOBJECT_INTROSPECTION_CHECK([0.9.0])
+ 
+ AM_PROG_VALAC([0.14.0])
+ AC_SUBST(VALAC)
+diff --git a/libskk/Makefile.am b/libskk/Makefile.am
+index 79a4854..59efca7 100644
+--- a/libskk/Makefile.am
++++ b/libskk/Makefile.am
+@@ -78,17 +78,6 @@ libskk_la_SOURCES =				\
+ 	keysyms.vala				\
+ 	$(NULL)
+ 
+-if HAVE_INTROSPECTION
+-girdir = $(datadir)/gir-1.0
+-gir_DATA = Skk-@SKK_API_VERSION@.gir
+-
+-typelibdir = $(libdir)/girepository-1.0
+-typelib_DATA = Skk-@SKK_API_VERSION@.typelib
+-
+-Skk-@SKK_API_VERSION@.typelib: Skk-@SKK_API_VERSION@.gir
+-	@INTROSPECTION_COMPILER@ --shared-library=libskk -o $@ $^
+-endif
+-
+ Skk-@SKK_API_VERSION@.gir skk-internals-@SKK_API_VERSION@.vapi skk-@SKK_API_VERSION@.vapi: libskk.la
+ 
+ GITIGNOREFILES =				\
