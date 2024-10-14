@@ -1,7 +1,7 @@
 set -e
 . ./common.sh $1
 
-boost_version="1.85.0"
+boost_version="1.86.0"
 
 boost_dir="boost-$boost_version"
 boost_tar="$boost_dir-cmake.tar.xz"
