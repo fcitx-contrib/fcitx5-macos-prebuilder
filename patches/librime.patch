@@ -72,7 +72,7 @@ index 9a2d128d..0b9d201c 100644
                                                FallbackOptions::All);
  }
 diff --git a/src/rime/gear/selector.cc b/src/rime/gear/selector.cc
-index 06874103..5869535e 100644
+index 06874103..b83e815d 100644
 --- a/src/rime/gear/selector.cc
 +++ b/src/rime/gear/selector.cc
 @@ -14,6 +14,10 @@
@@ -167,6 +167,24 @@ index 06874103..5869535e 100644
    auto result = KeyBindingProcessor::ProcessKeyEvent(
        key_event, ctx, text_orientation | candidate_list_layout,
        FallbackOptions::None);
+@@ -197,7 +237,7 @@ inline static bool caret_at_end_of_input(Context* ctx) {
+ }
+ 
+ bool Selector::PreviousCandidate(Context* ctx) {
+-  if (is_linear_layout(ctx) && !caret_at_end_of_input(ctx)) {
++  if (f5m_is_linear_layout && !caret_at_end_of_input(ctx)) {
+     // let navigator handle the arrow key.
+     return false;
+   }
+@@ -207,7 +247,7 @@ bool Selector::PreviousCandidate(Context* ctx) {
+   int index = comp.back().selected_index;
+   if (index <= 0) {
+     // in case of linear layout, fall back to navigator
+-    return !is_linear_layout(ctx);
++    return !f5m_is_linear_layout;
+   }
+   comp.back().selected_index = index - 1;
+   comp.back().tags.insert("paging");
 diff --git a/src/rime/gear/selector.h b/src/rime/gear/selector.h
 index 5e4bfce0..e88aace0 100644
 --- a/src/rime/gear/selector.h
