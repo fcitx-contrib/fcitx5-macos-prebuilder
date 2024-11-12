@@ -158,7 +158,7 @@ index 06874103..b83e815d 100644
  
    TextOrientation text_orientation =
 -      is_vertical_text(ctx) ? Vertical : Horizontal;
-+      f5m_is_vertical_rl ? VerticalRL : 
++      f5m_is_vertical_rl ? VerticalRL :
 +      f5m_is_vertical_lr ? VerticalLR :
 +      Horizontal;
    CandidateListLayout candidate_list_layout =

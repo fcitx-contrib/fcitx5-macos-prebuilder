@@ -75,7 +75,7 @@
 	url = https://github.com/rime/librime-predict
 [submodule "anthy-cmake"]
 	path = anthy-cmake
-	url = https://github.com/fcitx5-android/anthy-cmake.git
+	url = https://github.com/fcitx5-android/anthy-cmake
 [submodule "iso-codes"]
 	path = iso-codes
 	url = https://salsa.debian.org/iso-codes-team/iso-codes
